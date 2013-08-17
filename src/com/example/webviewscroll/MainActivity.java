@@ -129,6 +129,8 @@ public class MainActivity extends Activity {
 				}
 
 				if (shouldAnimate) {
+
+					mWebViewZoom.flingScroll(0, 0);
 					
 					if (mAddressBar != null) {
 						addressBarHeightCache = mAddressBar.getContentHeight();
@@ -164,10 +166,11 @@ public class MainActivity extends Activity {
 //							mWebViewZoom.moveContent(0, (int)(distance + 0.5), -1);
 //							mWebViewZoom.moveContent(0, 60, 3000);
 //							mAddressBar.moveContent(0, (int)(distance + 0.5), (int)(sec * 1000 + 0.5));
+							mWebViewZoom.scrollWebViewBy(0, -mWebViewZoom.getWebViewScrollY());
+							
 						}
 						@Override
 						public void run() {
-							mWebViewZoom.scrollWebViewBy(0, -mWebViewZoom.getWebViewScrollY());
 							runImpl();
 						}
 					}, 0);

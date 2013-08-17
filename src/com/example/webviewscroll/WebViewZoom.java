@@ -213,5 +213,11 @@ public class WebViewZoom extends AbsoluteLayout {
 		moveContent(dx, dy, -1);
 		
 	}
+
+	public void flingScroll(int vx, int vy) {
+		if (mWebView != null) {
+			mWebView.flingScroll(vx, vy);
+		}
+	}
 	
 }
